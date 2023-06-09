@@ -1,0 +1,78 @@
+
+#header{
+    display:flex;
+    justify-content: center;
+    .center{
+        display:flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 130px;
+        background-color: rgb(13, 20, 49);
+        align-items: center;
+        .logobox{
+            position: relative;
+            left: 40px;
+        }
+        .gnb{
+            display: flex;
+            > li{
+                position: relative;
+                margin: 0 20px;
+                a{
+                    color:#fff;
+                    font-size: 13pt;
+                }
+                &:hover{
+                    > a{
+                        color:#e15b7e;
+                    }
+                    &::after{
+                        background: url("/img/pink_ov_icon.png") no-repeat;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 12px;
+                        height: 12px;
+                        z-index: 98;
+                        bottom: -35px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+            li{
+                .gnb_depth2_1{
+                    position: absolute;
+                    top:70px;
+                    width: 100vw;
+                    left: -712.8px;
+                    height: 200px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    background-color: #000;
+                    li{
+                        margin: 0 20px;
+                        a{
+                            color:#fff;
+                            &:hover{
+                                color:#e15b7e;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right_menu{
+            position: relative;
+            right:40px;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            padding:5px;
+            p{
+                font-size: 11pt;
+                color:#fff;
+            }
+        }
+    }
+}
