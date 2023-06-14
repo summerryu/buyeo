@@ -3,6 +3,9 @@
     display: flex;
     justify-content: center;
     position: relative;
+    background-color:#0b1921;
+    height: 380px;
+    background: url("/img/gnb_bg.jpg");
     .center {
       position: absolute;
       display: flex;
@@ -10,6 +13,7 @@
       width: 100%;
       height: 130px;
       align-items: center;
+      flex-wrap: wrap;
       .logobox {
         position: relative;
         left: 40px;
@@ -21,8 +25,9 @@
           margin: 0 20px;
           a {
             color: #fff;
-            font-size: 13pt;
+            font-size: 12pt;
             position: relative;
+            font-family: 'Noto Sans KR', sans-serif;
           }
           &:hover {
             > a {
@@ -106,5 +111,21 @@
           color: #fff;
         }
       }
+    }
+    .center_img_box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .moon{
+            width: 100px;
+            height: 100px;
+        }
+        .textimg{
+            width: 260px;
+            height: 70px;
+        }
     }
   }
