@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행사개요 > 부여문화재야행</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="stylesheet" href="/css/subHeader.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/subCont1.css">
+</head>
+<body>
+    <%- include("subHeader.ejs")%>
+    <div id="container">
+        <div class="center">
+            <h1 class="title">행사개요</h1>
+            <div class="content">
+                <div class="left_box">
+                    <img src="/img/big_text.png">
+                    <div class="miniboxs">
+                        <div><a href="#">리플렛 다운로드</a></div>
+                        <div><a href="#">부여야행TV 바로가기</a></div>
+                    </div>
+                </div>
+                <div class="right_box">
+                    <h2 class="minititle">2022 부여문화재야행『정림아! 사비로와!』</h2>
+                    <p>사비백제의 역사를 품고 밤을 누비는 부여문화재야행</p>
+                    <ul class="list">
+                        <li><span>일시</span>2022. 9. 16(금) ~ 18(일), 9. 23(금) ~ 25(일)</li>
+                        <li><span>장소</span>정림사지와 석탑로, 의열로, 관북리 유적 일원</li>
+                        <li><span>주최/주관</span>충청남도 부여군</li>
+                        <li><span>후원</span>문화재청, 충청남도</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content2">
+                <h1>부여문화재야행은, 백제의 아름다운 문화유산 정림사지를 중심으로 주변의 문화시설 콘텐츠를 활용하여
+                    <br/>다양한 야간 역사문화체험의 기회를 제공하는 문화유산 매개 지역관광 활성화 프로그램입니다.
+                </h1>
+                <div class="list">
+                    <% for(let i=0; i<menuList.length; i++) { %>
+                        <div class="boxs">
+                            <a href="/allprogram/detail/<%- i %>">
+                                <h1><%- menuList[i] %></h1>
+                                <p><%- listData[i].subtitle %></p>
+                                <p><%- listData[i].subtitle2 %></p>
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>
+    <script src="/js/header.js"></script>
+</body>
+</html>

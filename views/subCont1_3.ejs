@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행사지도 > 부여문화재야행</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="stylesheet" href="/css/subHeader.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <style>
+        
+    #container{
+        width: 100%;
+        
+    }
+    #container .center { 
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
+    }
+    #container .center .title{
+                width: 100%;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 700;
+                padding:20px 0;
+                margin: 50px 0;
+    }
+    #container .center .imgbox{
+        width: 1200px;
+    } 
+    #container .center .imgbox img {
+        width: 100%;
+    }
+    #container .center .btn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 30px;
+    }
+    #container .center .btn a {
+        background-color:  #d63c65;
+        color:#fff;
+        padding:15px;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    </style>
+</head>
+<body>
+    <%- include("subHeader.ejs")%>
+    <div id="container">
+        <div class="center">
+            <div class="title">행사지도</div>
+            <div class="imgbox">
+                <img src="/img/subCont1/subCont1_3/img1.jpg">
+            </div>
+            <div class="btn">
+                <a href="#">행사지도 다운로드</a>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>
+    <script src="/js/header.js"></script>
+</body>
+</html>

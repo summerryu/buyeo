@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문화시설 > 문화재</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="stylesheet" href="/css/subHeader.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/subCont3_detail.css">
+</head>
+<body>
+    <%- include("subHeader.ejs")%>
+    <input id="detail_num" type="hidden" value="<%- Num %>">
+    <div id="container">
+        <div class="center">
+            <div class="title">문화시설</div>
+            <div class="list_wrap">
+
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>
+
+    <script src="/js/header.js"></script>
+    <script>
+        
+        const detailNum = document.querySelector("#detail_num").value;
+        const list_wrap = document.querySelector(".list_wrap");
+        
+        const listData = [
+        {
+            list : [{
+                image:"/img/subCont3/num1/img1.jpg",
+                title:"국립부여박물관",
+                content1:"충남 부여군 부여읍 금성로 5", //장소
+                content2:"1월 1일, 매주 월요일", // 휴무일
+                detailContent:
+                    `국립부여박물관은 1929년 발족된 부여고적보존회를 시작으로 현재까지 약80여년에 이르는 깊은 역사를 간직하고 있으며, 충남 서부지역의 선사문화를 비롯하여 백제의 찬란한 문화를 꽃피웠던 사비시기(538~660) 백제문화의 연구와 조사, 보존에 중추적인 역할을 담당하고 있는 백제전문박물관이다.`,
+                contact:"충남종합관광안내소 뒷길로 좌측으로 200m가셔서 우측에 있습니다."
+            }]
+        },
+        {
+            list : [{
+                image:"/img/subCont3/num1/img2.png",
+                title:"정림사지박물관",
+                content1:"충남 부여군 부여읍 정림로83", 
+                content2:"매주 월요일",
+                detailContent:
+                    `
+                    
+                        정림사지박물관은 백제 사비시기 불교와 그 중심에 있었던 정림사를 주제로 백제 불교문화를 재조명하고 올바른 역사인식을 고취시키고자 건립되었다. 박물관의 건물 형태는 불교의 상징인 ‘卍’자 모양으로 2021년 6월 실감형 ICT 기술을 활용한 콘텐츠를 구성하여 재개관하였다. 백제시대 중 가장 화려했던 사비시기의 불교 사상 등 백제의 꿈과 땀이 담긴 정림사지를 직접 느낄 수 있는 테마형 박물관이다.
+                        제1전시실(정림사지관), 브릿지, 제2전시실(백제불교역사관), 안내데스크, 영상실, 뮤지엄샵, 기획전시실, 카페테리아 등으로 이루어져 있다. 제1전시실(정림사지관)에서는 사비백제 번영의 중심에 서있던 정림사지의 의의와 가치를 첨단 ICT 기술을 활용한 콘텐츠를 통해 감상하고 체험할 수 있다. 제2전시실(백제불교역사관)에서는 백제의 찬란했던 불교역사를 실감 디지털콘텐츠로 재조명하고, 주변 국가와의 불교문화 교류를 알아보고 감상할 수 있다. 제2전시실(중층)에서는 통일신라시대 이후 정림사지에서 출토된 기와, 토기, 청자 등 다양한 통일신라시대 이후의 유물을 관람할 수 있다. 브릿지에서는 극락정토를 형상화한 미디어아트로 아름다운 연꽃과 환상적인 세계가 펼쳐진다.
+                    `,
+                contact:"충남종합관광안내서에서 나와 우회전, 삼거리 신호등에서 좌회전해 약300m쯤 직진하면 좌측 돌담길 끝에서 정림사지박물관 안내표지판 따라 좌회전하시면 정림사지박물관 입구입니다."
+            }]
+        },
+        {
+            list : [{
+                image:"/img/subCont3/num1/img3.jpg",
+                title:"사비도성 가상체험관",
+                content1:"충남 부여군 부여읍 부소로 15, 사비도성가상체험관(구 국립부여박물관)", //소재지
+                content2:"매주 월요일, 1월 1일, 설날, 추석", // 지정번호
+                detailContent:
+                    `
+                    이곳 체험관에서는 21세기 최첨단 과학기술과 문화적 상상력으로 되살려낸 백제
+                    사비 시대의 품격 있는 문화를 총체적으로 감상하고 직접 경험할 수 있을 것입니다.
+                    백제 사비도성 가상체험관에서는 1400여 년 전 한반도에서 고대 동아시아의
+                    문화를 꽃피운 백제와 그 수도였던 부여의 모습을 첨단 기술로 만나볼 수 있습니다. 
+
+                    한성시대에서부터 웅진시대를 거쳐 사비시대에 이르기까지 백제의 역사를 전달하며
+                    사비인들의 생활과 문화를 체험하실 수 있습니다. 3d 디지털 인터랙티브, 포토존을
+                    이용하여 관람객이 직접 백제 문화에 참여할 수 있습니다.
+                    `,
+                contact:"충남 부여군 부여읍 부소로 15, 사비도성가상체험관(구 국립부여박물관)"
+            }]
+        },
+        {
+            list : [{
+                image:"/img/subCont3/num1/img4.jpg",
+                title:"신동엽문학관.생가",
+                content1:"충남 부여군 부여읍 신동엽길 12",
+                content2:"1월1일, 음력1월1일, 음력8월15일, 매주 월요일",
+                detailContent:
+                    `
+                    1960년대 한국 현대시를 대표하는 민족시인 신동엽은 우리 고장 부여의 자랑스러운 인물이다. 시인은 1959년 조선일보 신춘문예에 장시 <이야기하는 쟁기꾼의 대지>가 당선되어 등단하였으며, 1969년 4월 7일 타계할 때까지 40년의 길지 않은 생을 살면서 80여 편에 달하는 시와 시극, 그리고 산문 등의 작품을 남겼다.
+                    신동엽문학관은 시인의 생애와 문학성을 조사, 연구하고 군민들뿐만 아니라 시인을 사랑하는 전 국민들에게 창작 활동과 정서 함양을 위한 공간을 제공함으로써, 신동엽문학관이 우리나라의 문화적 토대를 굳건히 다지는 지역문화의 산실로 거듭 날 수 있도록 노력하고 있다.
+
+                    `,
+                contact:"부여시외버스터미널 정문에서 계백장군동상 방면으로 직진한 후 성모의원과 부여성당 사이 골목으로 진입."
+            }]
+        },
+        {
+            list:[{
+                image:"/img/subCont3/num1/img5.jpg",
+                title:"부여문화원",
+                content1:"충청남도 부여군 부여읍 의열로 43",
+                content2:"",
+                detailContent:
+                `
+                1954년에 설립된 부여문화원은 부여의 역사를 바탕으로 새로운 시대의 지역문화 창달을 위해 설립되었다.
+                부여지역 고유문화의 개발, 보급, 보존, 전승 및 선양하는 일을 비롯하여 향토사의 조사, 연구, 자료수집을 통한 사료집 발간, 백제문화제와 서동연꽃축제, 열린문화공연 등 지역 문화행사의 주관, 명사와 함께하는 부여답사, 어린이 역사교실과 문화가족 운영 등 다양한 사업을 진행하고 있다.
+                    `,
+                contact:"부여시외버스터미널 정문에서 계백장군동상 방면으로 직진한 후 성모의원과 부여성당 사이 골목으로 진입."
+            }]
+        },
+        {
+            list:[{
+                image:"/img/subCont3/num1/img6.jpg",
+                title:"부소갤러리",
+                content1:"충청남도 부여군 부여읍 부소로15",
+                content2:"",
+                detailContent:
+                `
+                ▶부소갤러리 홈페이지 : https://www.facebook.com/pages/%eb%b6%80%ec%86%8c%ea%b0%a4%eb%9f%ac%eb%a6%ac/116045556609140
+                    `,
+                contact:""
+            }]
+        }
+        ]
+        console.log(listData[1]);
+        
+        data(detailNum)
+        function data(detailNum){
+            let createTag = "";
+            for(let i=0; i<listData[detailNum].list.length; i++){
+                console.log(listData[detailNum].list);
+                createTag += `
+                        <h1>${listData[detailNum].list[i].title}</h1>
+                        <ul class="contentBox">
+                            <li><span>장소</span>${listData[detailNum].list[i].content1}</li>
+                            <li><span>휴무일</span>${listData[detailNum].list[i].content2}</li>
+                        </ul>
+                        <div class="detail_content">
+                            <h1>상세정보</h1>
+                            <div class="textbox">
+                                <h4>
+                                    ${listData[detailNum].list[i].detailContent}
+                                </h4>
+                                <p style="margin: 15px 0;">▶오시는길</p>
+                                <p>${listData[detailNum].list[i].contact}</p>
+                            </div>
+                            <div class="botbox">
+                                <div class="imgbox">
+                                    <img src="${listData[detailNum].list[i].image}">
+                                </div>
+                            </div>
+                        </div>
+                `
+            }
+            list_wrap.innerHTML = createTag;
+        }
+    </script>
+</body>
+</html>

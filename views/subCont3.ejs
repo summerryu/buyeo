@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문화재 > 연계 문화재(시설)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="stylesheet" href="/css/subHeader.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/subCont3.css">
+</head>
+<body>
+    <%- include("subHeader.ejs")%>
+    <div id="container">
+        <div class="center">
+            <div class="title">문화재</div>
+            <div class="list">
+                <% for(let i=0; i<sub3Data.length; i++) { %>
+                    <div class="boxs">
+                        <a href="/sub3_1_2/detail/<%- i %>">
+                            <div class="imgbox">
+                                <img src="<%- sub3Data[i].image %>">
+                            </div>
+                            <div class="textbox">
+                                <h1><%- sub3Data[i].title %></h1>
+                                <p><%- sub3Data[i].subTitle %></p>
+                            </div>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>
+    <script src="/js/header.js"></script>
+</body>
+</html>

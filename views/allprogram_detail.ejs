@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- menuList[Num] %> > 전체프로그램</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="stylesheet" href="/css/allprogram_detail.css">
+    <link rel="stylesheet" href="/css/subHeader.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <%- include("subHeader.ejs")%>
+    <div id="container">
+        <div class="center">
+            <ul class="cont1_menus">
+                <li><a href="/allprogram">전체</a></li>
+                <% for(let i=0; i<menuList.length; i++) { %>
+                    <li class="<%- (Num === i)? "on" : "" %>"><a href="/allprogram/detail/<%- i %>"><%- menuList[i] %></a></li>
+                <% } %>
+            </ul>
+            <input id="detail_num" type="hidden" value="<%- Num %>">
+        <div class="list_wrap">
+            <div class="titlebox">
+                <h1 style="font-weight: 700;"><%- menuList[Num]%></h1>
+            </div>
+            <div class="list"> <!-- 데이터 세팅되는 구간 -->
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>
+    <script src="/js/header.js"></script>
+    <script>
+        const allprogramData1 = [
+        { // 야경
+            list:[
+                {
+                    image: "/img/allprogram/num1/img1.jpg",
+                    miniTitle:"1夜. 야경(夜景)",
+                    subTitle:"사비소망 등불거리",
+                    text:"부여문화재야행의 거점시설을 잇는 야행 등불거리",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"석탑로에서 미성삼거리 구간",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num1/img2.jpg",
+                    miniTitle:"1夜. 야경(夜景)",
+                    subTitle:"사비 밤달밤달",
+                    text:"달빛아래 돌담길을 거닐다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 주변 돌담길",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num1/img3.jpg",
+                    miniTitle:"1夜. 야경(夜景)",
+                    subTitle:"빛으로 깨어난 정림사지",
+                    text:"부여문화재야행의 거점인 정림사지에서 즐기는 이색볼거리",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 내부, 정림사지옆 솔밭길, 석탑로",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num1/img4.jpg",
+                    miniTitle:"1夜. 야경(夜景)",
+                    subTitle:"부여희망 등불거리",
+                    text:"이색창조거리에서 의열로까지 이어지는 야행 등불거리",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로 구간",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num1/img5.jpg",
+                    miniTitle:"1夜. 야경(夜景)",
+                    subTitle:"정림이랑 휴식시간",
+                    text:"잠시 쉬어가는 시간, 편안하게 휴식을 취하는 곳",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"버스킹 존 일대",
+                    contentThree:"부여군민 및 관광객"
+                },
+
+            ]
+        },
+        {  // 야로
+            list:[
+                {
+                    image: "/img/allprogram/num2/img1.jpg",
+                    miniTitle:"2夜. 야로(夜路)",
+                    subTitle:"백제 예인 퍼포먼스",
+                    text:"최초의 한류스타 미마지를 재현하다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 일원(주무대 → 개방문 → 이색창조거리)",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num2/img2.jpg",
+                    miniTitle:"2夜. 야로(夜路)",
+                    subTitle:"스트릿 스탬프 투어",
+                    text:"부여문화재야행 곳곳에 숨겨져 있는 스탬프를 찍어 미션 완성!",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지, 부여객사 등 문화재 개방시설",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num2/img3.jpg",
+                    miniTitle:"2夜. 야로(夜路)",
+                    subTitle:"거리에서 만나는 AR 백제위인전",
+                    text:"증강현실 앱을 통해, 거리를 걸으며 사비의 역사를 배워보자",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 오층석탑, 부여향교, 국립부여박물관, 부여향교",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num2/img4.jpg",
+                    miniTitle:"2夜. 야로(夜路)",
+                    subTitle:"백투더 사비",
+                    text:"백제에서 온 역사적 인물을 만나다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 일원",
+                    contentThree:"부여군민 및 관광객"
+                },
+            ]
+        },
+        {  // 야사
+            list:[
+                {
+                    image: "/img/allprogram/num3/img1.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"삼충신이 들려주는 충절이야기",
+                    text:"역사 이야기 : 백제의 삼충신, 성충·흥수·계백",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 주무대",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num3/img2.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"만담꾼이 들려주는 사비백제 이야기",
+                    text:"반갑소. 부여에 어서오시오",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 오층석탑 주변 공간",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num3/img3.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"만담꾼이 들려주는 금동대향로 이야기",
+                    text:"반갑소, 그 이야기 들어보았소?",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 옆 솔밭길",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num3/img4.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"사비밤소풍 문화재해설 투어",
+                    text:"지역 문화재해설사와 함께하는 문화재 투어",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지, 신동엽문학관, 국립부여박물관 등",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num3/img5.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"유홍준 교수님과 함께하는 사비특강",
+                    text:"유홍준 교수님과 함께하는 사비백제의 문화강국 이야기",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 내 주무대",
+                    contentThree:"사전접수자(30명), 현장 관람객"
+                },
+                {
+                    image: "/img/allprogram/num3/img6.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"소원을 들어주는 탑돌이",
+                    text:"한국의 민속놀이, 탑돌이 체험",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 오층석탑",
+                    contentThree:"현장 관람객(회당 20명 내외 참여)"
+                },
+                {
+                    image: "/img/allprogram/num3/img7.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"부여향교 선비체험",
+                    text:"옛 선비들이 즐겼던 다례를 통한 심신수양",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"부여향교",
+                    contentThree:"사전신청자(각 회당 20명)"
+                },
+                {
+                    image: "/img/allprogram/num3/img8.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"백제의 놀이문화",
+                    text:"백제 전통놀이 체험",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num3/img9.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"국립부여박물관 전시",
+                    text:"미디어아트로 구현된 백제인의 세계관과 이상향 :「백제금동대향로」, 「백제 명품, 백제 문양전」",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"국립부여박물관",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num3/img10.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"정림사지박물관 관람",
+                    text:"사비연화360 : 360돔으로 즐기는 애니메이션 “기억의 저편”",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지박물관",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num3/img11.jpg",
+                    miniTitle:"3夜. 야사(夜史)",
+                    subTitle:"사비도성 가상체험관 체험",
+                    text:"ICT 기술을 통해 1400여년 전 백제를 경험해보자(3면 영상 이머시브룸, 직접 그리는 사비도성 인터랙티브, VR라이더 등)",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"사비도성 가상체험관",
+                    contentThree:"부여군민 및 관광객"
+                },
+            ]
+        },
+        {  // 야설
+            list:[
+                {
+                    image: "/img/allprogram/num4/img1.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"사비로운 버스킹",
+                    text:"부여의 밤을 아름답게 빛내줄 감성 버스커들의 거리공연",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 내, 의열로 버스킹 존",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num4/img2.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"사비의 악사",
+                    text:"전통·고전 악기 연주자들이 들려주는 아름다운 선율",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 내, 의열로 버스킹 존",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num4/img3.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"사비예술단",
+                    text:"사비백제 음악을 전하는 공연",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 내, 의열로 버스킹 존",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num4/img4.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"사비의 달빛멜로디",
+                    text:"전통적인 문화강국 사비백제 부여에서 경험하는 클래식·재즈 공연 (지역단체 및 엠씨리 밴드)",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 내, 의열로 버스킹 존",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num4/img5.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"달빛 뮤지엄 콘서트",
+                    text:"퓨전음악밴드의 감동이 있는 잔잔한 감성 공연",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 주 무대",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num4/img6.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"사비로운 사비술사 [마술 공연, 라이트 버블쇼]",
+                    text:"전통소품을 이용한 마술 & 라이트 버블쇼!",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 주 무대",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num4/img6.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"무형문화 예술공연 [세도두레풍장 공연]",
+                    text:"도무형문화재 제28호, 마을공동체놀이 ‘세도두레풍장’을 통해 농악발전의 기틀을 살펴본다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 주 무대",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num4/img6.jpg",
+                    miniTitle:"4夜. 야설(夜說)",
+                    subTitle:"동에번쩍 서에번쩍 플래시몹",
+                    text:"밤거리 곳곳에서 벌어지는 플래시몹 공연",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 주 무대",
+                    contentThree:"부여군민 및 관광객"
+                },
+            ]
+        },
+        {  // 야식
+            list:[
+                {
+                    image: "/img/allprogram/num5/img1.jpg",
+                    miniTitle:"5夜. 야식(夜食)",
+                    subTitle:"사비장터 먹거리 ZONE",
+                    text:"부여지역 상인회가 주도하는 먹거리 야시장",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num5/img2.jpg",
+                    miniTitle:"5夜. 야식(夜食)",
+                    subTitle:"이웃나라 먹거리 ZONE",
+                    text:"사비백제와 교류했던 이웃국가들의 음식을 푸드트럭에서 만나다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로",
+                    contentThree:"부여군민 및 관광객"
+                }
+            ]
+        },
+        { // 야시
+            list:[
+                {
+                    image: "/img/allprogram/num6/img1.jpg",
+                    miniTitle:"6夜. 야시(夜市)",
+                    subTitle:"사비예술장터 (10개 부스)",
+                    text:"지역공방과 부여군민이 함께 꾸미는 플리마켓",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num6/img2.jpg",
+                    miniTitle:"6夜. 야시(夜市)",
+                    subTitle:"사비마켓 (30개 부스)",
+                    text:"백제의 옛 장터가 돌아온다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num6/img3.jpg",
+                    miniTitle:"DIY 사비체험존 (10개 부스)",
+                    subTitle:"DIY 사비체험존 (10개 부스)",
+                    text:"내 손으로 직접 만드는 부여문화재야행의 추억!",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num6/img4.jpg",
+                    miniTitle:"사비장인과 함께하는 특별체험 : 단청그리기",
+                    subTitle:"DIY 사비체험존 (10개 부스)",
+                    text:"지역 문화재수리기술자와 함께하는 단청문양 그리기 체험(실제 단청 안료 활용)",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로",
+                    contentThree:"사전모집"
+                },
+                {
+                    image: "/img/allprogram/num6/img5.jpg",
+                    miniTitle:"사비장인과 함께하는 특별체험 : 지화만들기",
+                    subTitle:"DIY 사비체험존 (10개 부스)",
+                    text:"국가무형문화재 은산별신제 “꽃 받기행사”의 장인에게 배우는 지화 체험",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num6/img6.jpg",
+                    miniTitle:"굿뜨래 농산물 MARKET",
+                    subTitle:"부여 굿뜨래 상품 및 연계상품 전시·판매",
+                    text:"부여 굿뜨래 상품 및 연계상품 전시·판매",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지 주차장 옆 광장",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num6/img7.jpg",
+                    miniTitle:"시민참여부스 (2개 부스)",
+                    subTitle:"부여 굿뜨래 상품 및 연계상품 전시·판매",
+                    text:"지역민이 주도하고 진행하는 시민참여부스",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"의열로 1구간",
+                    contentThree:"부여군민 및 관광객"
+                },
+            ]
+        },
+        {  // 야화
+            list:[
+                {
+                    image: "/img/allprogram/num7/img1.jpg",
+                    miniTitle:"7夜. 야화(夜畵)",
+                    subTitle:"전국 석탑 전시전",
+                    text:"전국의 석탑을 사진으로 담았습니다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num7/img2.jpg",
+                    miniTitle:"7夜. 야화(夜畵)",
+                    subTitle:"거리의 그림술사",
+                    text:"캐리커쳐로 여러분의 얼굴을 그려드립니다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"정림사지",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num7/img3.jpg",
+                    miniTitle:"7夜. 야화(夜畵)",
+                    subTitle:"김영학 조각 전시전",
+                    text:"현대조각의 거성, 김영학 조각 전시전",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"부여문화원",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num7/img4.jpg",
+                    miniTitle:"7夜. 야화(夜畵)",
+                    subTitle:"유홍준 기증유물 전시전",
+                    text:"유홍준 교수님의 사비백제 유물 전시전",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"부여문화원",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num7/img5.jpg",
+                    miniTitle:"7夜. 야화(夜畵)",
+                    subTitle:"신동엽 문학관 전통염색천 전시전",
+                    text:"낮의 색, 밤의 빛. 전통염색천으로 시간의 경계를 그어보다",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"신동엽 문학관",
+                    contentThree:"부여군민 및 관광객"
+                },
+                {
+                    image: "/img/allprogram/num7/img6.jpg",
+                    miniTitle:"7夜. 야화(夜畵)",
+                    subTitle:"어린이 문화유산 그림 전시",
+                    text:"사비백제 문화유산을 주제로 어린이 그림대회 개최 후, 우수작 시상 및 전시",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"신동엽 문학관",
+                    contentThree:"관내 유치원·초등학교 저학년 재학생"
+                },
+                {
+                    image: "/img/allprogram/num7/img7.jpg",
+                    miniTitle:"7夜. 야화(夜畵)",
+                    subTitle:"부소갤러리 전시",
+                    text:"부여미술협회 작품전시(9.16 ~ 9.18) / 정봉숙 개인전 (9.23~ 9.25)",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"부소갤러리",
+                    contentThree:"부여군민 및 관광객"
+                },
+            ]
+        },
+        {   // 야숙
+            list:[
+                {
+                    image: "/img/allprogram/num8/img1.jpg",
+                    miniTitle:"8夜. 야숙(夜宿)",
+                    subTitle:"오감으로 추억하는 사비여행",
+                    text:"부여에서의 하룻밤",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"관내 게스트하우스, 숙박업소, 백제관, 전통한옥팬션 등 부여 전지역 제휴 숙박업소",
+                    contentThree:"부여군민 및 관광객"
+                },
+            ]
+        },
+        {   // 야주
+            list:[
+                {
+                    image: "/img/allprogram/num9/img1.jpg",
+                    miniTitle:"9夜. 야주(夜晝)",
+                    subTitle:"집에서도 즐겨요 사비랜드",
+                    text:"금동대향로 입체퍼즐을 집으로 받아보세요!",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"사전예약",
+                    contentThree:"온라인 사전신청자(200명)"
+                },
+                {
+                    image: "/img/allprogram/num9/img2.jpg",
+                    miniTitle:"9夜. 야주(夜晝)",
+                    subTitle:"나도 고고학자!",
+                    text:"집에서 떠나는 문화재 발굴 여행",
+                    contentOne:"2022.9.16(금) ~ 2022.09.18(일), 2022.9.23(금) ~ 2022.9.25(일)",
+                    contentTwo:"사전예약",
+                    contentThree:"온라인 사전신청자(100명)"
+                },
+            ]
+        }
+        ]
+
+        const detailNum = document.querySelector("#detail_num").value;
+
+        const list_wrap = document.querySelector(".list_wrap .list");
+
+        data(detailNum)
+
+        function data(detailNum){
+            let createTag = "";
+
+            for(let i=0; i<allprogramData1[detailNum].list.length; i++){
+                createTag += `
+                            <div class="boxs">
+                                <div class="imgbox">
+                                <img src="${allprogramData1[detailNum].list[i].image}">
+                                </div>
+                                <div class="textbox">
+                                    <p class="minititle">${allprogramData1[detailNum].list[i].miniTitle}</p>
+                                    <h1 class="subtitle">${allprogramData1[detailNum].list[i].subTitle}</h1>
+                                    <p class="text">${allprogramData1[detailNum].list[i].text}</p>
+                                    <ul class="content">
+                                        <li><span>일시</span>${allprogramData1[detailNum].list[i].contentOne}</li>
+                                        <li><span>장소</span>${allprogramData1[detailNum].list[i].contentTwo}</li>
+                                        <li><span>대상</span>${allprogramData1[detailNum].list[i].contentThree}</li>
+                                    </ul>
+                                </div>
+                            </div>`
+                list_wrap.innerHTML = createTag;
+            }
+        }
+     
+    </script>
+</body>
+</html>
