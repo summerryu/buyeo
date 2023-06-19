@@ -1,0 +1,293 @@
+#container {
+  width: 100%;
+  height: 100%;
+}
+#container .center {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+#container .center .cont1_menus {
+  display: flex;
+  height: 135px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+#container .center .cont1_menus li {
+  width: 24.7%;
+}
+#container .center .cont1_menus li a {
+  display: block;
+  text-align: center;
+  padding: 18px 10px 15px;
+  color: gray;
+  font-size: 10pt;
+  box-shadow: 1px 0 0 0 #f1f1f1, 0 1px 0 0 #f1f1f1, 1px 1px 0 0 #f1f1f1, 1px 0 0 0 #f1f1f1 inset, 0 1px 0 0 #f1f1f1 inset;
+  position: relative;
+}
+#container .center .cont1_menus li a::before {
+  content: "";
+  display: none;
+  width: 42px;
+  height: 4px;
+  background-color: #bd375b;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+#container .center .cont1_menus li a:hover {
+  font-weight: 600;
+  background-color: #e34a73;
+  border-color: #e34a73;
+  color: #fff;
+}
+#container .center .cont1_menus li a:hover::before {
+  content: "";
+  display: flex;
+  width: 42px;
+  height: 4px;
+  background-color: #bd375b;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+#container .center .cont1_menus li.on a {
+  font-weight: 600;
+  background-color: #e34a73;
+  border-color: #e34a73;
+  color: #fff;
+}
+#container .center .cont1_menus li.on a::before {
+  content: "";
+  display: flex;
+  width: 42px;
+  height: 4px;
+  background-color: #bd375b;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+#container .center .list_wrap {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#container .center .list_wrap .titlebox {
+  width: 100%;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+#container .center .list_wrap .list {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#container .center .list_wrap .list .boxs {
+  padding: 30px;
+  border: 1px solid rgb(207, 207, 207);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+}
+#container .center .list_wrap .list .boxs .imgbox {
+  width: 50%;
+}
+#container .center .list_wrap .list .boxs .imgbox img {
+  width: 90%;
+  border-radius: 15px;
+}
+#container .center .list_wrap .list .boxs .textbox {
+  width: 50%;
+}
+#container .center .list_wrap .list .boxs .textbox .minititle {
+  color: #e34a73;
+  font-size: 12pt;
+  font-weight: 600;
+}
+#container .center .list_wrap .list .boxs .textbox .subtitle {
+  margin: 20px 0;
+  font-size: 15pt;
+  font-weight: 700;
+}
+#container .center .list_wrap .list .boxs .textbox .text {
+  margin-bottom: 30px;
+  font-size: 10pt;
+  color: gray;
+}
+#container .center .list_wrap .list .boxs .textbox .content {
+  background-color: #fcf4f4;
+  padding: 15px;
+}
+#container .center .list_wrap .list .boxs .textbox .content li {
+  position: relative;
+  line-height: 33px;
+  font-size: 13px;
+  color: #8b8b8b;
+}
+#container .center .list_wrap .list .boxs .textbox .content li span {
+  font-weight: 700;
+  margin: 15px;
+  color: #000;
+  font-size: 15px;
+}
+#container .center .list_wrap .list .boxs .textbox .content li::before {
+  left: 0;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  background: #e34a73;
+  top: 11px;
+  border-radius: 100%;
+  content: "";
+}
+
+@media screen and (max-width: 1024px) {
+  #container {
+    width: 100%;
+    height: 100%;
+  }
+  #container .center {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  #container .center .cont1_menus {
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+  #container .center .cont1_menus li {
+    width: 34%;
+  }
+  #container .center .cont1_menus li a::before {
+    width: 30%;
+  }
+  #container .center .cont1_menus li a:hover::before {
+    width: 30%;
+  }
+  #container .center .cont1_menus li.on a::before {
+    content: "";
+    display: flex;
+    width: 30%;
+  }
+  #container .center .list_wrap {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #container .center .list_wrap .titlebox {
+    width: 100%;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  #container .center .list_wrap .list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #container .center .list_wrap .list .boxs {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 520px;
+    flex-direction: column;
+    margin-left: 30px;
+  }
+  #container .center .list_wrap .list .boxs .imgbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #container .center .list_wrap .list .boxs .imgbox img {
+    width: 90%;
+    border-radius: 15px;
+  }
+  #container .center .list_wrap .list .boxs .textbox {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #container {
+    width: 100%;
+    height: 100%;
+  }
+  #container .center {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  #container .center .cont1_menus {
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+  #container .center .cont1_menus li {
+    width: 34%;
+  }
+  #container .center .cont1_menus li a::before {
+    width: 30%;
+  }
+  #container .center .cont1_menus li a:hover::before {
+    width: 30%;
+  }
+  #container .center .cont1_menus li.on a::before {
+    content: "";
+    display: flex;
+    width: 30%;
+  }
+  #container .center .list_wrap {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #container .center .list_wrap .titlebox {
+    width: 100%;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  #container .center .list_wrap .list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #container .center .list_wrap .list .boxs {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+}

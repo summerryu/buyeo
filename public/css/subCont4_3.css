@@ -1,0 +1,63 @@
+#container {
+  width: 100%;
+}
+#container .center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+#container .center > div {
+  width: 70%;
+}
+#container .center .title {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  padding: 20px 0;
+  margin: 50px 0;
+}
+#container .center .center_box {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#container .center .center_box > .boxs {
+  width: 100%;
+  margin-bottom: 30px;
+}
+#container .center .center_box > .boxs a h2 {
+  color: #000;
+  font-weight: 500;
+  border: 1px solid rgb(195, 6, 91);
+  padding: 30px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+#container .center .center_box > .boxs a h2:hover {
+  color: rgba(0, 128, 255, 0.585);
+  text-decoration: underline;
+}
+#container .center .center_box > .boxs .sub_box {
+  display: none;
+  border-top: none;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 0 0 10px 10px;
+  padding: 30px;
+  font-size: 14px;
+  background-color: rgb(247, 247, 247);
+}
+#container .center .center_box .boxs.on a h2 {
+  color: #000;
+  font-weight: 500;
+  border: 1px solid rgb(195, 6, 91);
+  padding: 30px;
+  font-size: 15px;
+  border-radius: 10px 10px 0 0;
+}
+#container .center .center_box .boxs.on .sub_box {
+  display: block;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="stylesheet" href="/css/subHeader.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/subCont4.css">
+</head>
+<body>
+    <%- include("subHeader.ejs")%>
+    <div id="container">
+        <div class="center">
+            <div class="title">공지사항</div>
+            <div class="center_box" style="margin-top: 20px; margin-bottom: 20px;">
+                <table class="tb1">
+                    <tr class="top">
+                        <td>번호</td>
+                        <td>제목</td>
+                        <td>작성자</td>
+                    </tr>
+                    <tr>
+                        <th>공지</th>
+                        <th>2022부여문화재야행 홈페이지 시범운영 안내</th>
+                        <th>관리자</th>
+                    </tr>
+                    <% for(let i=0; i<3; i++){ %>
+                        <tr>
+                            <th><%- i %>num</th>
+                            <th><%- i %>title</th>
+                            <th><%- i %>author</th>
+                        </tr>
+                    <% } %>
+                </table>
+                <div class="bot">
+                    <a href="/sub4">목록</a>
+                </div>
+            </div>
+            <div class="bot_box">
+                <ul class="paging"> <!-- 추후 페이징으로 수정예정 -->
+                    <% for(let i=1; i<5; i++) { %>
+                        <li><a href="#"><%- i %></a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>
+    <script src="/js/header.js"></script>
+    
+</body>
+</html>

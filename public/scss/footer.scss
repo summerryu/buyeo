@@ -1,0 +1,40 @@
+.footer{ 
+    padding-top: 30px;
+    background-color: #e7e7e7;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    >div{
+        margin: 20px 0;
+    }
+    .fot_top_logo{
+        margin-top: 30px;
+        width: 450px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 120px;
+            height: 40px;
+        }
+    }
+    .fot_center_menu{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        i{
+            color:#555555;
+            font-size: 25px;
+            margin: 0 15px;
+        }
+    }
+    .fot_bot_copy{
+        p{
+            text-align: center;
+            color:#555555;
+            font-size: 10pt;
+            line-height: 40px;
+        }
+    }
+}

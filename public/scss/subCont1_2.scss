@@ -1,0 +1,99 @@
+
+#container{
+    width: 100%;
+    .center{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        .title{
+            width: 100%;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            padding:20px 0;
+            margin: 50px 0;
+        }
+        .tbWrap{
+            .tb_title{
+                width: 100%;
+                font-size: 20px;
+                font-weight: 600;
+                margin: 10px 0;
+            }
+            .tb{
+                border-top: 1px solid #bd375b;
+                width: 1200px;
+                border-collapse: collapse;
+                margin-bottom: 100px;
+                .top_tb{
+                    background-color: #f9f9f9;
+                    th{
+                        font-weight: 600;
+                        width: 50px;
+                        height: 30px;
+                        border-top: 1px solid #e4446f;
+                        font-size: 15px;
+                        color: #000;
+                    }
+                }
+                td,th,tr{
+                        border: 1px solid rgb(207, 207, 207);
+                        width: 50px;
+                        height: 30px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color:rgb(92, 92, 92);
+                        line-height: 20px;
+                }
+                tr{
+                    > th {
+                       &:nth-child(1){
+                        background-color: #f9f9f9;
+                        font-weight: 500;
+                        color:rgb(73, 73, 73);
+                       }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    #container{
+        .center{
+            .tbWrap{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                .tb_title{
+                    margin-left: 20px;
+                }
+                .tb{
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #container{
+        .center{
+            .tbWrap{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                .tb_title{
+                    margin-left: 20px;
+                }
+                .tb{
+                    width: 95%;
+                }
+            }
+        }
+    }
+}

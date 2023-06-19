@@ -1,0 +1,157 @@
+#header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .center {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 130px;
+      align-items: center;
+      .logobox {
+        position: relative;
+        left: 40px;
+        z-index: 98;
+      }
+      .gnb {
+        display: flex;
+        > li {
+          margin: 0 20px;
+          a {
+            color: #fff;
+            font-size: 13pt;
+            position: relative;
+          }
+          &:hover {
+            > a {
+              color: #e15b7e;
+              &::after {
+                background: url("/img/pink_ov_icon.png") no-repeat;
+                content: "";
+                display: block;
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                z-index: 98;
+                bottom: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+            }
+            .gnb_depth2_1,
+            .gnb_depth2_2,
+            .gnb_depth2_3,
+            .gnb_depth2_4 {
+              display: flex;
+              z-index: 98;
+              
+            }
+          }
+        }
+        li {
+          .gnb_depth2_1,
+          .gnb_depth2_2,
+          .gnb_depth2_3,
+          .gnb_depth2_4 {
+            background-color: #0b1921;
+            position: absolute;
+            top: 130px;
+            width: 100%;
+            height: 200px;
+            align-items: center;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            justify-content: center;
+            border-bottom: 1px solid gray;
+            border-top: 1px solid gray;
+            li {
+                animation: imgon .5s;
+                @keyframes imgon {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+                width: 130px;
+                display: flex;
+                justify-content: center;
+                margin: 0 20px;
+                a {
+                    color: #fff;
+                    font-size: 11pt;
+                    &:hover {
+                    color: #e15b7e;
+                    }
+                }
+            }
+          }
+          .gnb_depth2_1.on,
+          .gnb_depth2_2.on,
+          .gnb_depth2_3.on,
+          .gnb_depth2_4.on {
+            display: flex;
+            z-index: 98;
+          }
+        }
+      }
+      .right_menu {
+        position: relative;
+        right: 40px;
+        border: 1px solid #fff;
+        border-radius: 50px;
+        padding: 5px;
+        p {
+          font-size: 11pt;
+          color: #fff;
+        }
+      }
+      .sub_gnb_on{
+        display: none;
+        a{
+          i{
+            font-size: 30px;
+            color:#fff;
+            position: absolute;
+            right: 35px;
+            top:50px;
+          }
+        }
+      }
+    }
+  }
+
+
+  // 태블릿
+
+  @media screen and (max-width:1024px){
+    #header {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      width: 100%;
+      z-index: 97;
+      .center {
+        .right_menu{
+          display: none;
+        }
+        .logobox{
+          display: none;
+        }
+        .gnb{
+          display: none;
+        }
+        .sub_gnb_on{
+          display: block;
+          a{
+            i{
+              font-size: 30px;
+              color:#fff;
+              position: absolute;
+              right: 35px;
+              top:50px;
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,119 @@
+#m_header.on {
+  display: block;
+}
+
+#m_header {
+  position: fixed;
+  background-color: #101922;
+  right: 0;
+  font-weight: 400;
+  z-index: 98;
+  display: none;
+}
+#m_header .center {
+  height: 100vh;
+  width: 400px;
+  background: url("/img/mb_star.png") no-repeat;
+  background-size: cover;
+}
+#m_header .center .closeBtn {
+  position: absolute;
+  right: 2%;
+  font-size: 30px;
+  top: 2%;
+}
+#m_header .center .closeBtn a {
+  color: #fff;
+}
+#m_header .center .logobox {
+  width: 100%;
+  border-bottom: 1px solid rgb(56, 56, 56);
+}
+#m_header .center .logobox a img {
+  padding: 5px;
+}
+#m_header .center .gnb {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+#m_header .center .gnb::after {
+  width: 1px;
+  height: 100vh;
+  content: "";
+  position: absolute;
+  display: block;
+  right: 65%;
+  background-color: rgb(56, 56, 56);
+}
+#m_header .center .gnb > li {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+#m_header .center .gnb > li > a {
+  display: block;
+  width: 35%;
+  color: #fff;
+  position: relative;
+}
+#m_header .center .gnb > li > a:hover {
+  transition: all 0.5s;
+  color: #e15b7e;
+}
+#m_header .center .gnb > li > a:hover::before {
+  background: url("/img/pink_ov_icon.png") no-repeat;
+  content: "";
+  width: 0px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: -20px;
+}
+#m_header .center .gnb > li .gnb_depth2 {
+  display: none;
+  width: 65%;
+}
+#m_header .center .gnb > li .gnb_depth2 li {
+  width: 100%;
+}
+#m_header .center .gnb > li .gnb_depth2 li a {
+  font-size: 13px;
+  margin-left: 20px;
+  margin-bottom: 25px;
+  display: block;
+  width: 100%;
+  color: #fff;
+  position: relative;
+}
+#m_header .center .gnb > li .gnb_depth2 li a::after {
+  content: "";
+  display: block;
+  background-color: rgb(56, 56, 56);
+  width: 90%;
+  height: 1px;
+  position: absolute;
+  bottom: -11px;
+}
+#m_header .center .gnb li.on > a:hover {
+  transition: all 0.5s;
+  color: #e15b7e;
+}
+#m_header .center .gnb li.on > a:hover::before {
+  background: url("/img/pink_ov_icon.png") no-repeat;
+  content: "";
+  width: 10px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: -20px;
+}
+#m_header .center .gnb li.on .gnb_depth2 {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  display: block;
+}

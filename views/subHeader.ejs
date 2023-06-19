@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/css/m_header.css">
+<link rel="stylesheet" href="/css/subHeader.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<%- include("m_header.ejs") %>
+    <div id="header">
+        <div class="center">
+            <div class="logobox">
+                <a href="/">
+                    <img src="/img/logo.png">
+                </a>
+            </div>
+            <ul class="gnb">
+                <li>
+                    <a href="/sub1">부여문화재야행</a>
+                    <ul class="gnb_depth2_1">
+                        <li><a href="/sub1">행사개요</a></li>
+                        <li><a href="/sub2">행사일정</a></li>
+                        <li><a href="/sub3">행사지도</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/allprogram">프로그램</a>
+                    <ul class="gnb_depth2_2">
+                        <li><a href="/allprogram">전체 프로그램</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=w9WV1pzQPXM">온라인야행</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/sub3_1">연계 문화재(시설)</a>
+                    <ul class="gnb_depth2_3">
+                        <li><a href="/sub3_1">문화재</a></li>
+                        <li><a href="/sub3_1_2">문화시설</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/sub4">커뮤니티</a>
+                    <ul class="gnb_depth2_4">
+                        <li><a href="/sub4">공지사항</a></li>
+                        <li><a href="/sub4_2">묻고답하기(Q&A)</a></li>
+                        <li><a href="/sub4_3">자주하는질문(FAQ)</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="sub_gnb_on">
+                <a href="#"><i class="fa-solid fa-bars"></i></a>
+            </div>
+        </div>
+        <div class="center_img_box">
+            <a href="/">
+                <img class="moon" src="/img/moon.png">
+                <img class="textimg" src="/img/section_txt.png">
+            </a>
+        </div>
+    </div>
+    <script src="/js/header.js"></script>

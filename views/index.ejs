@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부여문화재야행</title>
+    <!-- 폰트아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Song+Myung&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/m_header.css">
+    <link rel="stylesheet" href="/css/set.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include("header.ejs")%>
+    <div id="container">
+        <div class="center">
+            <div class="cont1">
+                <div class="top_img">
+                    <img src="/img/moon.png">
+                </div>
+                <div class="center_box">
+                    <div class="left_text">
+                        <img src="/img/mv_text.png">
+                    </div>
+                    <div class="right_text">
+                        <div class="right_top">
+                            <h1>정림아! 사비로 와!</h1>
+                            <p>사비백제의 역사를 품고 밤을 누비는<br/></p>
+                            <p>부여문화재야행</p>
+                        </div>
+                        <div class="right_bottom">
+                            <p>2022.09.16 (금) ~ 2022.09.18(일)</p>
+                            <p>2022.09.23 (금) ~ 2022.09.25(일)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bar_test">
+        <div class="bar_menus">
+            <h2>공지사항</h2>
+            <marquee width="400px"  direction="down" scrolldelay="200">
+                <a href="#">사전이벤트 안내</a>
+                <a href="#">2022부여문화재야행 홈페이지 시범운영 안내</a>
+                <a href="#">사전예약 프로그램 실행불가 오류 정정알림</a>
+            </marquee>
+        </div>
+    </div>
+    <div id="cont2">
+        <div class="box">
+            <div class="top_box">
+                <img class="moon" src="/img/moon.png">
+                <img class="sec_txt" src="/img/section_txt.png">
+                <p>
+                    세계 유산 도시 부여!
+                </p>
+                <p>부여에 달빛이 오르면</p>
+                <p>
+                    찬란한 백제의 문화와 역사의 밤길이 열린다.
+                </p>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=w9WV1pzQPXM">
+                    <img src="/img/ikon/paly_bar.png">
+                    <div class="top_box">
+                        부여야행 2022 홍보영상
+                    </div>
+                </a>
+            </div>
+            <div class="video_btn">
+                <a href="https://www.youtube.com/watch?v=w9WV1pzQPXM">
+                    부여야행 공식유투브 바로가기
+                </a>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="top_text_box">
+                <h1 class="title">함께 누비는 9야</h1>
+                <p>사비백제의 밤을 즐기는 9가지 방법</p>
+            </div>
+            <div class="slide">
+                <div class="slide_wrap">
+                    <% for (let i=0; i < slideData.length; i++) { %>
+                        <div class="top_box <%= i === 0 ? 'on' : '' %>" >
+                            <p class="subTitle"><%-  slideData[i].subTitle %></p>
+                            <h1 class="title"><%-  slideData[i].title %></h1>
+                            <h3 class="titleTextTop"><%-  slideData[i].titleTextTop %></h3>
+                            <h3 class="titleTextBot">(<%-  slideData[i].titleTextBot %>)</h3>
+                            <div class="img_box">
+                                <img src="<%-  slideData[i].Image %>">
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="slide_btns">
+                    <div class="prev_btn">
+                        <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+                    </div>
+                    <div class="next_btn">
+                        <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="slide_menus">
+                    <% for (let i = 0; i < slideData.length; i++) { %>
+                        <% if (slideData[i].menus && slideData[i].menus.length > 0) { %>
+                          <ul class="menu <%= i === 0 ? 'on' : '' %>">
+                            <% for (let j = 0; j < slideData[i].menus.length; j++) { %>
+                              <li><a href="/allprogram/detail/<%- i %>"><%- slideData[i].menus[j] %></a></li>
+                            <% } %>
+                          </ul>
+                        <% } %>
+                      <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="box4">
+            <div class="titlebox">
+                <h1>문화재 소개</h1>
+                <p>역사의 밤을 빛낼 사비백제의 문화재를 소개합니다.</p>
+            </div>
+            <div class="sub_btns">
+                <div class="left_sub">
+                    <a href="/sub3_1">문화재</a>
+                </div>
+                <div class="right_sub">
+                    <a href="/sub3_1_2">문화시설</a>
+                </div>
+            </div>
+            <div class="slide_container">
+                <div class="slide_carousel">
+                    <div class="item"><a href="/sub3_1"><img src="/img/images/cultural.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1"><img src="/img/images/cultural1.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1"><img src="/img/images/cultural2.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1"><img src="/img/images/cultural3.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1"><img src="/img/images/cultural4.jpg"></a></div>
+                </div>
+                <div class="slide_carousel2">
+                    <div class="item"><a href="/sub3_1_2"><img src="/img/images/cultural5.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1_2"><img src="/img/images/cultural6.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1_2"><img src="/img/images/cultural7.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1_2"><img src="/img/images/cultural8.jpg"></a></div>
+                    <div class="item"><a href="/sub3_1_2"><img src="/img/images/cultural9.jpg"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="box5">
+            <div class="box5_title">
+                <h1><img src="/img/big_text.png"></h1>
+            </div>
+            <ul class="lists">
+                <li>
+                    <a href="#">오시는길</a>
+                    <img src="/img/ikon/ov1.png">
+                </li>
+                <li>
+                    <a href="/sub2">행사일정</a>
+                    <img src="/img/ikon/ov2.png">
+                </li>
+                <li>
+                    <a href="/sub1">행사개요</a>
+                    <img src="/img/ikon/ov3.png">
+                </li>
+                <li>
+                    <a href="/sub3">행사지도</a>
+                    <img src="/img/ikon/ov4.png">
+                </li>
+                <li>
+                    <a href="/sub4_3">자주하는<br/>질문</a>
+                    <img src="/img/ikon/ov5.png">
+                </li>
+                <li>
+                    <a href="/sub4_2">묻고답하기</a>
+                    <img src="/img/ikon/ov6.png">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer_bg"></div>
+    <div class="footer">
+        <div class="fot_top_logo">
+            <a href="#">
+                <img src="/img/bottom_logo1.png">
+            </a>
+            <a href="#">
+                <img src="/img/bottom_logo2.png">
+            </a>
+            <a href="#">
+                <img src="/img/bottom_logo3.svg">
+            </a>
+        </div>
+        <div class="fot_center_menu">
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+        <div class="fot_bot_copy">
+            <p>[33168] 충남 부여군 부여읍 사비로 33 부여군청 Tel. 041-830-2646 Fax. 041-830-2959</p>
+            <p>COPYRIGHT 2022 BUYEO-GUN. All RIGHTS RESERVED.</p>
+        </div>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+#container {
+  padding-top: 130px;
+  width: 100%;
+  background: url("/img/sub_bg.jpg");
+  background-size: cover;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#container .center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#container .center .title {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 700;
+  padding: 20px 0;
+  margin-bottom: 100px;
+}
+#container .center .content {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  margin-bottom: 200px;
+}
+#container .center .content .left_box {
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
+  flex-direction: column;
+}
+#container .center .content .left_box .miniboxs {
+  display: flex;
+  justify-content: space-between;
+}
+#container .center .content .left_box .miniboxs > div {
+  border: 1px solid #fff;
+  margin: 15px;
+  padding: 15px;
+  font-size: 14px;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+#container .center .content .left_box .miniboxs > div a {
+  color: #fff;
+}
+#container .center .content .left_box .miniboxs > div:hover {
+  border: 1px solid #e34a73;
+}
+#container .center .content .left_box .miniboxs > div:hover a {
+  color: #e34a73;
+}
+#container .center .content .right_box .minititle {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  margin: 15px 0;
+}
+#container .center .content .right_box p {
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+#container .center .content .right_box .list {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+}
+#container .center .content .right_box .list li {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  display: flex;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+#container .center .content .right_box .list li span {
+  display: block;
+  width: 80px;
+  background-color: #e34a73;
+  border-radius: 15px;
+  margin-right: 25px;
+  font-weight: 600;
+}
+#container .center .content2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+#container .center .content2 > h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  line-height: 30px;
+  font-weight: 400;
+  margin: 30px 0;
+}
+#container .center .content2 .list {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#container .center .content2 .list .boxs {
+  margin-bottom: 50px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+#container .center .content2 .list .boxs h1 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+#container .center .content2 .list .boxs p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+}
+#container .center .content2 .list .boxs:hover {
+  border: 1px solid #e34a73;
+}
+#container .center .content2 .list .boxs:nth-child(1) {
+  background: url("/img/subCont1/img1.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(2) {
+  background: url("/img/subCont1/img2.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(3) {
+  background: url("/img/subCont1/img3.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(4) {
+  background: url("/img/subCont1/img4.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(5) {
+  background: url("/img/subCont1/img5.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(6) {
+  background: url("/img/subCont1/img6.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(7) {
+  background: url("/img/subCont1/img7.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(8) {
+  background: url("/img/subCont1/img8.jpg") no-repeat;
+  background-size: cover;
+}
+#container .center .content2 .list .boxs:nth-child(9) {
+  background: url("/img/subCont1/img9.jpg") no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  #container {
+    padding-top: 130px;
+    width: 100%;
+    background: url("/img/sub_bg.jpg");
+    background-size: cover;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+  #container .center .content {
+    margin-bottom: 100px;
+    width: 80%;
+  }
+  #container .center .content .left_box {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+    flex-direction: column;
+  }
+  #container .center .content .left_box .miniboxs > div {
+    display: none;
+  }
+  #container .center .content .right_box {
+    width: 60%;
+  }
+  #container .center .content .right_box .minititle {
+    font-size: 16px;
+  }
+  #container .center .content .right_box p {
+    font-size: 14px;
+  }
+  #container .center .content .right_box .list li {
+    margin-bottom: 20px;
+    font-size: 11px;
+  }
+  #container .center .content .right_box .list li span {
+    font-size: 12px;
+  }
+  #container .center .content2 .list {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  #container .center .content2 .list .boxs {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 45%;
+    height: 150px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+  #container .center .content2 .list .boxs h1 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+  #container .center .content2 .list .boxs p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  #container .center .content2 .list .boxs:hover {
+    border: 1px solid #e34a73;
+  }
+  #container .center .content2 .list .boxs:nth-child(1) {
+    background: url("/img/subCont1/img1.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(2) {
+    background: url("/img/subCont1/img2.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(3) {
+    background: url("/img/subCont1/img3.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(4) {
+    background: url("/img/subCont1/img4.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(5) {
+    background: url("/img/subCont1/img5.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(6) {
+    background: url("/img/subCont1/img6.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(7) {
+    background: url("/img/subCont1/img7.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(8) {
+    background: url("/img/subCont1/img8.jpg") no-repeat;
+    background-size: cover;
+  }
+  #container .center .content2 .list .boxs:nth-child(9) {
+    background: url("/img/subCont1/img9.jpg") no-repeat;
+    background-size: cover;
+  }
+}

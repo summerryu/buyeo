@@ -1,0 +1,186 @@
+
+#header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color:#0b1921;
+    height: 380px;
+    width: 100%;
+    background: url("/img/gnb_bg.jpg");
+    .center {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 130px;
+      align-items: center;
+      .logobox {
+        position: absolute;
+        left: 40px;
+        z-index: 98;
+      }
+      .gnb {
+        display: flex;
+        > li {
+          margin: 0 20px;
+          a {
+            color: #fff;
+            font-size: 12pt;
+            position: relative;
+            font-family: 'Noto Sans KR', sans-serif;
+          }
+          &:hover {
+            > a {
+              color: #e15b7e;
+              &::after {
+                background: url("/img/pink_ov_icon.png") no-repeat;
+                content: "";
+                display: block;
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                z-index: 98;
+                bottom: -35px;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+            }
+            .gnb_depth2_1,
+            .gnb_depth2_2,
+            .gnb_depth2_3,
+            .gnb_depth2_4 {
+              display: flex;
+              z-index: 98;
+              
+            }
+          }
+        }
+        li {
+          .gnb_depth2_1,
+          .gnb_depth2_2,
+          .gnb_depth2_3,
+          .gnb_depth2_4 {
+            background-color: #0b1921;
+            position: absolute;
+            top: 130px;
+            width: 100%;
+            height: 200px;
+            align-items: center;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            justify-content: center;
+            border-bottom: 1px solid gray;
+            border-top: 1px solid gray;
+            li {
+                animation: imgon .5s;
+                @keyframes imgon {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+                width: 130px;
+                display: flex;
+                justify-content: center;
+                margin: 0 20px;
+                a {
+                    color: #fff;
+                    font-size: 11pt;
+                    &:hover {
+                    color: #e15b7e;
+                    }
+                }
+            }
+          }
+          .gnb_depth2_1.on,
+          .gnb_depth2_2.on,
+          .gnb_depth2_3.on,
+          .gnb_depth2_4.on {
+            display: flex;
+            z-index: 98;
+          }
+        }
+      }
+      .sub_gnb_on{
+        display: none;
+        top:0;
+        right:0;
+        a{
+          i{
+            font-size: 30px;
+            color:#fff;
+            position: absolute;
+            right: 35px;
+            top:50px;
+          }
+        }
+      }
+    }
+    .center_img_box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        a{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          .moon{
+              width: 100px;
+              height: 100px;
+          }
+          .textimg{
+              width: 260px;
+              height: 70px;
+          }
+        }
+    }
+  }
+
+
+  @media screen and (max-width:1024px){
+    #header {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      z-index: 97;
+      .center {
+        .right_menu{
+          display: none;
+        }
+        .logobox{
+          display: none;
+        }
+        .gnb{
+          display: none;
+        }
+        .sub_gnb_on{
+          display: flex;
+          a{
+            i{
+              font-size: 30px;
+              color:#fff;
+              position: absolute;
+              right: 35px;
+              top:50px;
+            }
+          }
+        }
+      }
+      .center_img_box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .moon{
+            width: 100px;
+            height: 100px;
+        }
+        .textimg{
+            width: 260px;
+            height: 70px;
+        }
+    }
+    }
+  }
