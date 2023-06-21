@@ -1,0 +1,74 @@
+#container{
+    width: 100%;
+    background: url(/img/sub_bg.jpg);
+    background-size: cover;
+    font-family: "Noto Sans KR", sans-serif;
+    .center{
+        height: 589px;
+        display: flex;
+        justify-content: center;
+        .loginbox{
+            transition: all 0.2s;
+            border-radius: 20px;
+            border: 1px solid #575757;
+            width: 800px;
+            height: 370px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .leftbox{
+                width: 50%;
+                margin-left: 50px;
+                form{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    .left{
+                        width: 80%;
+                        label{
+                            display: flex;
+                            width:100%;
+                            height: 50px;
+                            align-items: center;
+                            p{
+                                font-size: 15px;
+                                width: 25%;
+                                color:#fff;
+                            }
+                            input{
+                                height: 70%;
+                                width: 70%;
+                            }
+                        }
+                    }
+                    .right{
+                        width: 20%;
+                        display: flex;
+                        align-items: center;
+                        button{
+                            width: 100%;
+                            height: 90px;
+                            background-color: #e15b7e;
+                            border: 1px solid #e15b7e;
+                                font-size: 16px;
+                                font-weight: 600;
+                                color:#fff;
+                        }
+                    }
+                    .join{
+                        margin-top: 20px;
+                        color:#fff;
+                        &:hover{
+                            color: #e15b7e;
+                        }
+                    }
+                }
+            }
+            .rightbox{
+                margin-left: 30px;
+                width: 50%;
+            }
+        }
+    }
+}

@@ -79,7 +79,7 @@ configureSlideCarousel(slideCarousel2, 1); // 두 번째 슬라이드 캐러셀�
 
 function configureSlideCarousel(slideCarousel, direction) {
   const items = slideCarousel.querySelectorAll('.item');
-  const slideWidth = 100 / items.length;
+  const slideWidth = 110 / items.length;
 
   slideCarousel.style.width = `${items.length * slideWidth}%`;
   slideCarousel.style.transform = `translateX(${direction * (items.length * slideWidth)}%)`;

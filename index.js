@@ -1,28 +1,28 @@
 const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
-//데이터베이스의 데이터 입력,출력을 위한 함수명령어 불러들이는 작업
 const app = express();
 const port = 7001
 
-//ejs 태그를 사용하기 위한 세팅
+
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
+
+app.use(session({secret :'secret', resave : false, saveUninitialized: true}));
+app.use(passport.initialize());
+app.use(passport.session()); 
+
+
 app.set("view engine","ejs");
-//사용자가 입력한 데이터값을 주소로 통해서 전달되는 것을 변환(parsing)
 app.use(express.urlencoded({extended: true}));
 app.use(express.json()) 
-//css/img/js(정적인 파일)사용하려면 이코드를 작성!
 app.use(express.static('public'));
 
-//데이터 베이스 연결작업
-let db; //데이터베이스 연결을 위한 변수세팅(변수의 이름은 자유롭게 지어도 됨)
+let db; 
 
 MongoClient.connect("mongodb+srv://saunogq:dudwndi7@cluster0.xaury3g.mongodb.net/?retryWrites=true&w=majority",function(err,result){
-    //에러가 발생했을경우 메세지 출력(선택사항)
     if(err) { return console.log(err); }
-
-    //위에서 만든 db변수에 최종연결 ()안에는 mongodb atlas 사이트에서 생성한 데이터베이스 이름
     db = result.db("buyeo");
-
-    //db연결이 제대로 됬다면 서버실행
     app.listen(port,function(){
         console.log("서버연결 성공");
     });
@@ -109,11 +109,11 @@ app.get("/",function(req,res){
           menus: ["오감으로 추억하는 사비여행"]
         },
     ]
-    res.render("index.ejs",{slideData});
+    res.render("index.ejs",{slideData, login:req.user});
 });
 
 app.get("/allprogram",function(req,res){
-  res.render("allprogram.ejs")
+  res.render("allprogram.ejs",{login:req.user})
 })
 
 app.get("/allprogram/detail/:num",function(req,res){
@@ -131,7 +131,7 @@ app.get("/allprogram/detail/:num",function(req,res){
     "9夜. 야주(夜晝)",
   ]
 
-  res.render("allprogram_detail.ejs", { Num: Num , menuList:menuList});
+  res.render("allprogram_detail.ejs", { Num: Num , menuList:menuList, login:req.user});
 }) 
 
 app.get("/sub1",function(req,res){
@@ -184,21 +184,20 @@ app.get("/sub1",function(req,res){
       subtitle2:"집에서도 사비로와"
     },
   ]
-  res.render("subCont1.ejs", {menuList:menuList, listData:listData});
+  res.render("subCont1.ejs", {menuList:menuList, listData:listData,login:req.user});
 })
 
 app.get("/sub2",function(req,res){
-  res.render("subCont1_2.ejs");
+  res.render("subCont1_2.ejs",{login:req.user});
 })
 
 app.get("/sub3",function(req,res){
-  res.render("subCont1_3.ejs");
+  res.render("subCont1_3.ejs",{login:req.user});
 })
 
 
 // 문화재
 app.get("/sub3_1", function(req,res){
-   // 데이터세팅하기
    const sub3Data = [
     {
         image:"/img/subCont3/img1.jpg",
@@ -247,18 +246,17 @@ app.get("/sub3_1", function(req,res){
   },
   ]
   const Num = Number(req.params.num);
-  res.render("subCont3.ejs", {sub3Data:sub3Data, Num:Num});
+  res.render("subCont3.ejs", {sub3Data:sub3Data, Num:Num, login:req.user});
 })
 
 app.get("/sub3_1/detail/:num", function(req,res){
   const Num = Number(req.params.num);
-  res.render("subCont3_detail.ejs",{Num:Num})
+  res.render("subCont3_detail.ejs",{Num:Num,login:req.user})
 })
 
 
 // 문화시설
 app.get("/sub3_1_2", function(req,res){
-  // 데이터세팅하기
   const sub3Data = [
   {
     image:"/img/subCont3/num1/img1.jpg",
@@ -292,21 +290,31 @@ app.get("/sub3_1_2", function(req,res){
   },
  ]
  const Num = Number(req.params.num);
- res.render("subCont3_2.ejs", {sub3Data:sub3Data, Num:Num});
+ res.render("subCont3_2.ejs", {sub3Data:sub3Data, Num:Num, login:req.user});
 })
 
 app.get("/sub3_1_2/detail/:num", function(req,res){
  const Num = Number(req.params.num);
- res.render("subCont3_2_detail.ejs",{Num:Num})
+ res.render("subCont3_2_detail.ejs",{Num:Num,login:req.user})
 })
 
+
+// 공지사항
 app.get("/sub4",(req,res)=>{
-  res.render("subCont4.ejs")
+  db.collection("board_2").find().toArray((err,result)=>{
+    res.render("subCont4.ejs",{data:result,login:req.user})
+  })
 })
 
+app.get("/sub4_detail/:num",(req,res)=>{
+  db.collection("board_2").findOne(
+    {num:Number(req.params.num)},
+    (err,result)=>{
+    res.render("subCont4_detail.ejs",{data:result,login:req.user})
+  })
+})
 
 app.get("/sub4_2", (req, res) => {
-
   db.collection("board").find().toArray((err, result) => {
     let totalData = result.length;
     let perPage = 10;
@@ -344,7 +352,14 @@ app.get("/sub4_2", (req, res) => {
   })
 });
 
-
+// 질답페이지 게시글 클릭했을때 나오는 디테일 페이지
+app.get("/subCont4_2_detail/:num",(req,res)=>{
+  db.collection("board").findOne(
+    {num:Number(req.params.num)},
+    (err,result)=>{
+    res.render("subCont4_2_detail.ejs",{data:result,login:req.user})
+  })
+})
 
 // 질답 검색
 app.get("/search", (req, res) => {
@@ -397,11 +412,10 @@ app.get("/search", (req, res) => {
   });
 });
 
-// 질답 페이지
 
 // 질답페이지 게시글 작성
 app.get("/subCont4_2_insert",(req,res)=>{
-  res.render("subCont4_2_insert.ejs")
+  res.render("subCont4_2_insert.ejs",{login:req.user})
 })
 app.post("/dbinsert",(req,res)=>{
   db.collection("count").findOne({name:"게시물"},(err,countresult)=>{
@@ -419,19 +433,89 @@ app.post("/dbinsert",(req,res)=>{
 })
 
 
-// 질답페이지 게시글 클릭했을때 나오는 디테일 페이지
-app.get("/subCont4_2_detail/:num",(req,res)=>{
-  db.collection("board").findOne({num:Number(req.params.num)},(err,result)=>{
-    res.render("subCont4_2_detail.ejs",{data:result})
+// 자주하는질문 faq 페이지
+app.get("/sub4_3",(req,res)=>{
+  res.render("subCont4_3.ejs",{login:req.user})
+})
+
+// 로그인 페이지
+app.get("/login", (req,res)=>{
+  res.render("login.ejs",{login:req.user})
+})
+// 회원가입 페이지
+app.get("/join", (req,res)=>{
+  res.render("join.ejs",{login:req.user})
+})
+
+// 회원가입 데이터 db 저장 
+app.post("/joindb", (req,res)=>{
+  db.collection("user").findOne({userid:req.body.userid},(err,user)=>{
+    if(user){
+      res.send("<script> alert('이미 가입된 아이디입니다'); location.href='/join'; </script>")
+    }
+    else{
+      db.collection("userCount").findOne({name:"회원"},(err,result)=>{
+        db.collection("user").insertOne({
+          userNum:result.Num,
+          userid:req.body.userid,
+          userpassword:req.body.userpassword
+        },(err)=>{
+          db.collection("userCount").updateOne({name:"회원"},{$inc:{Num:1}},(err)=>{
+            res.send("<script>alert('회원가입 완료'); location.href='/login' </script>")
+          })
+        })
+      })
+    }
   })
 })
 
-// 자주하는질문 faq 페이지
-app.get("/sub4_3",(req,res)=>{
-  res.render("subCont4_3.ejs")
+// 로그아웃
+app.get("/logout",(req,res)=>{
+  req.logout(()=>{
+      res.redirect("/")
+  })
 })
 
 
-app.get("/m_header",(req,res)=>{
-  res.render("m_header.ejs");
+passport.use(new LocalStrategy({
+  usernameField : "userid",
+  passwordField : "userpassword",
+  session: true,
+},function(userid,userpassword, done){
+  db.collection("user").findOne({userid:userid},function(err,user){
+    if(err) { return done(err) }
+    if(!user){
+      return done(null, false, { message: "등록되지 않은 사용자입니다." });
+    }
+    if(userpassword === user.userpassword){
+      return done (null, user);
+    }
+    else{
+      return done(null,false, { message: "비밀번호가 일치하지 않습니다." });
+    }
+  });
+}));
+
+app.post("/logincheck", function(req,res , next){
+  passport.authenticate("local", function(err,user,info){
+    if(err) { return next(err) }
+    if(!user) {
+      return res.render("login.ejs", { message: info.message });
+    }
+    req.login(user, function(err){
+      if(err) { return next(err); }
+      return res.redirect("/");
+    });
+  })(req, res, next);
+})
+
+
+passport.serializeUser(function (user, done){
+  done(null, user.userid)
+});
+
+passport.deserializeUser(function(userid, done){
+  db.collection("user").findOne({userid:userid}, function(err,result){
+    done(null, result);
+  })
 })

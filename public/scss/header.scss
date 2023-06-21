@@ -8,16 +8,19 @@
       justify-content: space-between;
       width: 100%;
       height: 130px;
-      align-items: center;
       .logobox {
         position: relative;
         left: 40px;
         z-index: 98;
+        display: flex;
+        align-items: center;
       }
       .gnb {
         display: flex;
         > li {
           margin: 0 20px;
+          display: flex;
+          align-items: center;
           a {
             color: #fff;
             font-size: 13pt;
@@ -49,7 +52,7 @@
             }
           }
         }
-        li {
+        > li {
           .gnb_depth2_1,
           .gnb_depth2_2,
           .gnb_depth2_3,
@@ -95,14 +98,56 @@
         }
       }
       .right_menu {
-        position: relative;
-        right: 40px;
-        border: 1px solid #fff;
-        border-radius: 50px;
-        padding: 5px;
+        display: flex;
         p {
-          font-size: 11pt;
-          color: #fff;
+          margin-right: 10px;
+          position: relative;
+          right: 40px;
+          top:40px;
+          border: 1px solid #fff;
+          border-radius: 50px;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 30px;
+          width: 100px;
+          transition: all 0.3s;
+          a{
+            font-size: 11pt;
+            color: #fff;
+          }
+          &:hover{
+            background-color: #e15b7e;
+            border: 1px solid #e15b7e;
+            a{
+              color:#fff;
+            }
+          }
+        }
+      }
+      .users{
+        color:#fff;
+        position: relative;
+        top:40px;
+        right: 30px;
+        a{
+          margin-top: 20px;
+          margin-right: 10px;
+          color:#fff;
+          border: 1px solid #fff;
+          border-radius: 50px;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 20px;
+          width: 70px;
+          transition: all 0.3s;
+          &:hover{
+            background-color: #e15b7e;
+            border: 1px solid #e15b7e;
+          }
         }
       }
       .sub_gnb_on{
@@ -134,6 +179,9 @@
         .right_menu{
           display: none;
         }
+        .users{
+          display: none;
+        }
         .logobox{
           display: none;
         }
@@ -144,6 +192,7 @@
           display: block;
           a{
             i{
+              z-index: 99;
               font-size: 30px;
               color:#fff;
               position: absolute;

@@ -26,28 +26,30 @@
                         <td>제목</td>
                         <td>작성자</td>
                     </tr>
-                    <tr>
+                    <tr class="mid">
                         <th>공지</th>
                         <th>2022부여문화재야행 홈페이지 시범운영 안내</th>
                         <th>관리자</th>
                     </tr>
-                    <% for(let i=0; i<3; i++){ %>
-                        <tr>
-                            <th><%- i %>num</th>
-                            <th><%- i %>title</th>
-                            <th><%- i %>author</th>
-                        </tr>
-                    <% } %>
+                        <% for (let i = 0; i < data.length; i++) { %>
+                          <tr>
+                            <th><%- data[i].num %></th>
+                            <th>
+                              <a href="/sub4_detail/<%- data[i].num %>" style="color:#333333">
+                                <%- data[i].title %>
+                              </a>
+                            </th>
+                            <th><%- data[i].author %></th>
+                          </tr>
+                        <% } %>
                 </table>
                 <div class="bot">
                     <a href="/sub4">목록</a>
                 </div>
             </div>
             <div class="bot_box">
-                <ul class="paging"> <!-- 추후 페이징으로 수정예정 -->
-                    <% for(let i=1; i<5; i++) { %>
-                        <li><a href="#"><%- i %></a></li>
-                    <% } %>
+                <ul class="paging"> 
+                   <li>1</li>
                 </ul>
             </div>
         </div>

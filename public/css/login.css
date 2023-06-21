@@ -1,0 +1,74 @@
+#container {
+  width: 100%;
+  background: url(/img/sub_bg.jpg);
+  background-size: cover;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#container .center {
+  height: 589px;
+  display: flex;
+  justify-content: center;
+}
+#container .center .loginbox {
+  transition: all 0.2s;
+  border-radius: 20px;
+  border: 1px solid #575757;
+  width: 800px;
+  height: 370px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#container .center .loginbox .leftbox {
+  width: 50%;
+  margin-left: 50px;
+}
+#container .center .loginbox .leftbox form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#container .center .loginbox .leftbox form .left {
+  width: 80%;
+}
+#container .center .loginbox .leftbox form .left label {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+}
+#container .center .loginbox .leftbox form .left label p {
+  font-size: 15px;
+  width: 25%;
+  color: #fff;
+}
+#container .center .loginbox .leftbox form .left label input {
+  height: 70%;
+  width: 70%;
+}
+#container .center .loginbox .leftbox form .right {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+#container .center .loginbox .leftbox form .right button {
+  width: 100%;
+  height: 90px;
+  background-color: #e15b7e;
+  border: 1px solid #e15b7e;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+#container .center .loginbox .leftbox form .join {
+  margin-top: 20px;
+  color: #fff;
+}
+#container .center .loginbox .leftbox form .join:hover {
+  color: #e15b7e;
+}
+#container .center .loginbox .rightbox {
+  margin-left: 30px;
+  width: 50%;
+}

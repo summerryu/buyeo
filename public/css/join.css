@@ -1,0 +1,103 @@
+#container {
+  width: 100%;
+  background: url(/img/sub_bg.jpg);
+  background-size: cover;
+  font-family: "Noto Sans KR", sans-serif;
+}
+#container .center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 150px;
+}
+#container .center .title {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  padding: 20px 0;
+  margin: 50px 0;
+  color: #fff;
+}
+#container .center .join {
+  background-color: #fff;
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  border-radius: 15px;
+}
+#container .center .join .subtitle {
+  text-align: center;
+  width: 100%;
+  padding: 30px 0;
+  font-weight: 600;
+}
+#container .center .join .article {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  border: 1px solid rgb(190, 190, 190);
+  flex-wrap: wrap;
+  width: 80%;
+}
+#container .center .join .article .text_box {
+  padding: 5px;
+  white-space: pre-line;
+  font-size: 14px;
+  width: 100%;
+  height: 200px;
+  line-height: 20px;
+}
+#container .center .join #join_form {
+  padding-top: 20px;
+  width: 80%;
+  margin: 0 auto;
+  height: 230px;
+}
+#container .center .join #join_form label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+  height: 40px;
+}
+#container .center .join #join_form label p {
+  font-weight: 500;
+  width: 10%;
+}
+#container .center .join #join_form label input {
+  height: 25px;
+}
+#container .center .join span {
+  margin-left: 10px;
+  width: 50%;
+  font-size: 13px;
+}
+#container .center .join .btns {
+  display: flex;
+}
+#container .center .join .btns button {
+  border: none;
+  width: 80px;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 15px;
+}
+#container .center .join .btns button a {
+  background-color: rgb(212, 39, 97);
+  color: #fff;
+}
+#container .center .join .btns a {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 30px;
+  display: block;
+  width: 80px;
+  height: 30px;
+  background-color: rgb(53, 53, 53);
+  color: #fff;
+}

@@ -9,18 +9,21 @@
   justify-content: space-between;
   width: 100%;
   height: 130px;
-  align-items: center;
 }
 #header .center .logobox {
   position: relative;
   left: 40px;
   z-index: 98;
+  display: flex;
+  align-items: center;
 }
 #header .center .gnb {
   display: flex;
 }
 #header .center .gnb > li {
   margin: 0 20px;
+  display: flex;
+  align-items: center;
 }
 #header .center .gnb > li a {
   color: #fff;
@@ -49,10 +52,10 @@
   display: flex;
   z-index: 98;
 }
-#header .center .gnb li .gnb_depth2_1,
-#header .center .gnb li .gnb_depth2_2,
-#header .center .gnb li .gnb_depth2_3,
-#header .center .gnb li .gnb_depth2_4 {
+#header .center .gnb > li .gnb_depth2_1,
+#header .center .gnb > li .gnb_depth2_2,
+#header .center .gnb > li .gnb_depth2_3,
+#header .center .gnb > li .gnb_depth2_4 {
   background-color: #0b1921;
   position: absolute;
   top: 130px;
@@ -66,10 +69,10 @@
   border-bottom: 1px solid gray;
   border-top: 1px solid gray;
 }
-#header .center .gnb li .gnb_depth2_1 li,
-#header .center .gnb li .gnb_depth2_2 li,
-#header .center .gnb li .gnb_depth2_3 li,
-#header .center .gnb li .gnb_depth2_4 li {
+#header .center .gnb > li .gnb_depth2_1 li,
+#header .center .gnb > li .gnb_depth2_2 li,
+#header .center .gnb > li .gnb_depth2_3 li,
+#header .center .gnb > li .gnb_depth2_4 li {
   animation: imgon 0.5s;
   width: 130px;
   display: flex;
@@ -84,36 +87,78 @@
     opacity: 1;
   }
 }
-#header .center .gnb li .gnb_depth2_1 li a,
-#header .center .gnb li .gnb_depth2_2 li a,
-#header .center .gnb li .gnb_depth2_3 li a,
-#header .center .gnb li .gnb_depth2_4 li a {
+#header .center .gnb > li .gnb_depth2_1 li a,
+#header .center .gnb > li .gnb_depth2_2 li a,
+#header .center .gnb > li .gnb_depth2_3 li a,
+#header .center .gnb > li .gnb_depth2_4 li a {
   color: #fff;
   font-size: 11pt;
 }
-#header .center .gnb li .gnb_depth2_1 li a:hover,
-#header .center .gnb li .gnb_depth2_2 li a:hover,
-#header .center .gnb li .gnb_depth2_3 li a:hover,
-#header .center .gnb li .gnb_depth2_4 li a:hover {
+#header .center .gnb > li .gnb_depth2_1 li a:hover,
+#header .center .gnb > li .gnb_depth2_2 li a:hover,
+#header .center .gnb > li .gnb_depth2_3 li a:hover,
+#header .center .gnb > li .gnb_depth2_4 li a:hover {
   color: #e15b7e;
 }
-#header .center .gnb li .gnb_depth2_1.on,
-#header .center .gnb li .gnb_depth2_2.on,
-#header .center .gnb li .gnb_depth2_3.on,
-#header .center .gnb li .gnb_depth2_4.on {
+#header .center .gnb > li .gnb_depth2_1.on,
+#header .center .gnb > li .gnb_depth2_2.on,
+#header .center .gnb > li .gnb_depth2_3.on,
+#header .center .gnb > li .gnb_depth2_4.on {
   display: flex;
   z-index: 98;
 }
 #header .center .right_menu {
+  display: flex;
+}
+#header .center .right_menu p {
+  margin-right: 10px;
   position: relative;
   right: 40px;
+  top: 40px;
   border: 1px solid #fff;
   border-radius: 50px;
   padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100px;
+  transition: all 0.3s;
 }
-#header .center .right_menu p {
+#header .center .right_menu p a {
   font-size: 11pt;
   color: #fff;
+}
+#header .center .right_menu p:hover {
+  background-color: #e15b7e;
+  border: 1px solid #e15b7e;
+}
+#header .center .right_menu p:hover a {
+  color: #fff;
+}
+#header .center .users {
+  color: #fff;
+  position: relative;
+  top: 40px;
+  right: 30px;
+}
+#header .center .users a {
+  margin-top: 20px;
+  margin-right: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 70px;
+  transition: all 0.3s;
+}
+#header .center .users a:hover {
+  background-color: #e15b7e;
+  border: 1px solid #e15b7e;
 }
 #header .center .sub_gnb_on {
   display: none;
@@ -137,6 +182,9 @@
   #header .center .right_menu {
     display: none;
   }
+  #header .center .users {
+    display: none;
+  }
   #header .center .logobox {
     display: none;
   }
@@ -147,6 +195,7 @@
     display: block;
   }
   #header .center .sub_gnb_on a i {
+    z-index: 99;
     font-size: 30px;
     color: #fff;
     position: absolute;

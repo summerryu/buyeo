@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 / 회원가입</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <%- include("subHeader.ejs")%>
+    <div id="container">
+        <div class="center">
+            <div class="loginbox">
+                <div class="leftbox">
+                    <form id="login" action="/logincheck" method="post">
+                        <div class="left">
+                            <label for="userid">
+                                <p>아이디</p>
+                                <input type="text" name="userid" placeholder="아이디를 입력하세요">
+                            </label>
+                            <label for="userpassword">
+                                <p>비밀번호</p>
+                                <input type="password" name="userpassword" placeholder="비밀번호를 입력하세요">
+                            </label>
+                        </div>
+                        <div class="right">
+                            <button type="submit">
+                                로그인
+                            </button>
+                        </div>
+                        <% if (typeof message !== 'undefined' && message) { %>
+                            <script>
+                                alert('<%- message %>');
+                            </script>
+                        <% } %>
+                        <a class="join" href="/join">
+                            회원가입
+                        </a>
+                    </form>
+                </div>
+                <div class="rightbox">
+                    <img src="/img/big_text.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>
+</body>
+</html>
