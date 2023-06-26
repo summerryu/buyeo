@@ -345,7 +345,8 @@ app.get("/sub4_2", (req, res) => {
           blockEnd: blockEnd,
           blockNum: blockNum,
           totalBlock: totalBlock,
-          pageNumber: pageNumber
+          pageNumber: pageNumber,
+          login:req.user
         });
       }
     })
@@ -406,7 +407,8 @@ app.get("/search", (req, res) => {
         blockEnd: blockEnd,
         blockNum: blockNum,
         totalBlock: totalBlock,
-        pageNumber: pageNumber
+        pageNumber: pageNumber,
+        login:req.user
       });
     }
   });
@@ -496,17 +498,13 @@ passport.use(new LocalStrategy({
   });
 }));
 
-app.post("/logincheck", function(req,res , next){
-  passport.authenticate("local", function(err,user,info){
-    if(err) { return next(err) }
-    if(!user) {
-      return res.render("login.ejs", { message: info.message });
-    }
-    req.login(user, function(err){
-      if(err) { return next(err); }
-      return res.redirect("/");
-    });
-  })(req, res, next);
+app.post("/logincheck",passport.authenticate('local', {failureRedirect : '/loginfailure'}),(req,res)=>{
+  res.redirect("/") 
+})
+
+app.get("/loginfailure",(req,res)=>{
+   res.send("<script> alert('아이디 및 비밀번호를 확인 후 로그인 하세요'); location.href='/login'; </script>")
+
 })
 
 

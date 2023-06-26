@@ -1040,6 +1040,7 @@ body {
     width: 100%;
   }
   #cont2 .box4 {
+    display: none;
     width: 100%;
   }
   #cont2 .box4 .titlebox {
@@ -1282,6 +1283,7 @@ body {
     font-size: 16px;
   }
   #cont2 .box4 {
+    display: none;
     width: 100%;
   }
   #cont2 .box4 .titlebox {

@@ -11,5 +11,3 @@ for(let i=0; i<boxs.length; i++){
         boxs[i].classList.add("on");
     })
 }
-
-console.log(boxs);
