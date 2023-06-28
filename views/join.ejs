@@ -69,18 +69,23 @@
                         <p>이름</p>
                         <input type="text" name="userName" id="nameInput">
                     </label>
+                    <div class="radiobox">
+                        <label class="radio">
+                            <input type="radio" name="gender" value="men" checked="checked"><span>남성</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="gender" value="woman"><span>여성</span>
+                        </label>
+                    </div>
+                    <label>
+                        <p>생년월일</p>
+                        <input type="text" name="userbiths" id="bithsInput" placeholder="생년월일 8자리">
+                    </label>
                     <label>
                         <p>이메일</p>
-                        <input type="text" name="userName" id="nameInput">
-                        <h4>@</h4>
+                        <input type="text" name="userEmailId" id="nameInput">
+                        <h4 style="margin:0px 2px">@</h4>
                         <input type="text" name="userEmail" id="emailInput">
-                        <select>
-                            <option>naver.com</option>
-                            <option>daum.net</option>
-                            <option>gmail.com</option>
-                            <option>hanmail.net</option>
-                            <option>직접입력</option>
-                        </select>
                     </label>
                     <div class="btns">
                         <button type="submit">회원가입</button>

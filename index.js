@@ -456,11 +456,17 @@ app.post("/joindb", (req,res)=>{
       res.send("<script> alert('이미 가입된 아이디입니다'); location.href='/join'; </script>")
     }
     else{
+      const selectedValue = req.body.gender;
       db.collection("userCount").findOne({name:"회원"},(err,result)=>{
         db.collection("user").insertOne({
           userNum:result.Num,
           userid:req.body.userid,
-          userpassword:req.body.userpassword
+          userpassword:req.body.userpassword,
+          userName:req.body.userName,
+          gender:selectedValue,
+          userbiths:req.body.userbiths,
+          userEmailId:req.body.userEmailId,
+          userEmail:req.body.userEmail
         },(err)=>{
           db.collection("userCount").updateOne({name:"회원"},{$inc:{Num:1}},(err)=>{
             res.send("<script>alert('회원가입 완료'); location.href='/login' </script>")
