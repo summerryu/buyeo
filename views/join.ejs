@@ -55,7 +55,6 @@
                         ⑤   개인정보처리자는 정보주체가 열람등요구에 대한 거절 등 조치에 대하여 불복이 있는 경우 이의를 제기할 수 있도록 필요한 절차를 마련하고 안내하여야 한다.</div>
                 </div>
                 <form id="join_form" action="/joindb" method="post">
-                    
                     <label>
                         <p>아이디</p>
                         <input type="text" name="userid" id="idInput" class="text">
@@ -65,6 +64,23 @@
                         <p>비밀번호</p>
                         <input type="password" name="userpassword" id="passwordInput" class="password"  required>
                         <span id="passwordError" style="color: red;"></span> <!-- 비밀번호 유효성 오류 메시지 출력 영역 -->
+                    </label>
+                    <label>
+                        <p>이름</p>
+                        <input type="text" name="userName" id="nameInput">
+                    </label>
+                    <label>
+                        <p>이메일</p>
+                        <input type="text" name="userName" id="nameInput">
+                        <h4>@</h4>
+                        <input type="text" name="userEmail" id="emailInput">
+                        <select>
+                            <option>naver.com</option>
+                            <option>daum.net</option>
+                            <option>gmail.com</option>
+                            <option>hanmail.net</option>
+                            <option>직접입력</option>
+                        </select>
                     </label>
                     <div class="btns">
                         <button type="submit">회원가입</button>
